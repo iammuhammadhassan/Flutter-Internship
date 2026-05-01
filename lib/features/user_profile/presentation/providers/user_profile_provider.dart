@@ -22,7 +22,7 @@ class UserProfileProvider extends ChangeNotifier {
     notifyListeners();
 
     try {
-      _users = await _repository.fetchUsers();
+      _users = await _repository.fetchUsersFromApi();
     } catch (error) {
       _errorMessage = error.toString().replaceFirst('Exception: ', '');
     } finally {
